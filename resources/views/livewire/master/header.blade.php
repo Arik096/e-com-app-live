@@ -79,6 +79,7 @@
         input[type=text] {
             border: none;
             border-bottom: 2px solid rgb(255, 208, 1);
+            text-align: center;
         }
 
     </style>
