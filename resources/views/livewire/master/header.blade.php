@@ -20,10 +20,11 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Orders</a>
                             </li>
-                            <li class="nav-item" style="display: flex;align-items: center;">
-                                <a class="nav-link active" aria-current="page" href="#">cart</a>
-                                <input type="text" id="cart" name="cart" style="max-width: 50px;max-height:30px;"
-                                    value="10" disabled>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">
+                                    cart
+                                    <input type="text" id="cart" name="cart" style="max-width: 70px;max-height:30px;"
+                                        value="10" disabled></a>
                             </li>
                         </ul>
                         <form class="d-flex me-2 mb-2 mb-lg-0">
@@ -73,6 +74,11 @@
 
         ul .nav-item a:hover {
             color: white;
+        }
+
+        input[type=text] {
+            border: none;
+            border-bottom: 2px solid rgb(255, 208, 1);
         }
 
     </style>
