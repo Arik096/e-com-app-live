@@ -23,12 +23,18 @@
                                 <div class="form-group">
                                     <label for="email" style="padding: 5px;">Email address</label>
                                     <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="Enter your email address" value="{{ old('email') }}">
+                                        placeholder="Enter your email address" value="{{ old('email') }}" required>
+                                    @error('email')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div class="form-group">
                                     <label for="password" style="padding: 5px;">Password</label>
                                     <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="Enter your Password" value="{{ old('password') }}">
+                                        placeholder="Enter your Password" value="{{ old('password') }}" required>
+                                    @error('password')
+                                        <p class="text-danger">{{ $message }}</p>
+                                    @enderror
                                 </div>
                                 <div style="padding: 10px;">
                                     @if (Session()->has('sms'))
