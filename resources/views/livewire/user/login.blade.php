@@ -30,6 +30,13 @@
                                     <input type="password" class="form-control" id="password" name="password"
                                         placeholder="Enter your Password" value="{{ old('password') }}">
                                 </div>
+                                <div style="padding: 10px;">
+                                    @if (Session()->has('sms'))
+                                        <div class="alert alert-danger" role="alert">
+                                            {{ Session('sms') }}
+                                        </div>
+                                    @endif
+                                </div>
                                 <div style="display: flex; justify-content:center; padding-top:10px;">
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </div>
