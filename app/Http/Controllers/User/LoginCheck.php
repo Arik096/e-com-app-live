@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Session;
 
 class LoginCheck extends Controller
 {
@@ -17,14 +18,20 @@ class LoginCheck extends Controller
     // ->get();
 
     $user = User::where('email', $request->email)
-    ->get()
-    ->first();
+        ->get()
+        ->first();
 
     if ($user && Hash::check($request->password, $user->password)) {
-    $request->session()->put('user', $user);
-    return redirect(route('HomePage'));
+        $request->session()->put('user', $user);
+        return redirect(route('HomePage'));
     } else {
-    return "Username & Password Doesn't Match";
+        $request->session()->flash('sms', 'Wrong Credentials');
+        return redirect(route('LoginPage'));
     }
+    }
+
+    protected function logout(){
+        Session::forget('user');
+        return redirect(route('HomePage'));
     }
 }
