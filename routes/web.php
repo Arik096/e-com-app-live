@@ -20,3 +20,4 @@ use App\Http\Controllers\User\LoginCheck;
 Route::get('/', Home::class)->name('HomePage');
 Route::get('/login', Login::class)->name('LoginPage');
 Route::post('/login', [LoginCheck::class, 'login'])->name('Login');
+Route::get('/logout', [LoginCheck::class, 'logout'])->name('Logout');
