@@ -42,9 +42,11 @@
                                     </button>
                                 </li>
                                 <li class="nav-item me-2">
-                                    <button class="btn btn-outline-primary">
-                                        Logout
-                                    </button>
+                                    <a href="{{ route('Logout') }}">
+                                        <button class="btn btn-outline-primary">
+                                            Logout
+                                        </button>
+                                    </a>
                                 </li>
                             </ul>
                         @endif
