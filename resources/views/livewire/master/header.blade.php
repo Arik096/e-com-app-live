@@ -3,7 +3,7 @@
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{ route('HomePage') }}">
                         <img src="{{ asset('img/arikp_logo-removebg-preview.png') }}" alt="logo"
                             style="max-height: 50px;">
                     </a>
@@ -15,7 +15,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                <a class="nav-link active" aria-current="page" href="{{ route('HomePage') }}">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#">Orders</a>
@@ -41,12 +41,17 @@
                                         {{ $user[0]->name }}
                                     </button>
                                 </li>
+                                <li class="nav-item me-2">
+                                    <button class="btn btn-outline-primary">
+                                        Logout
+                                    </button>
+                                </li>
                             </ul>
                         @endif
                         @if (!Session::has('user'))
                             <ul class="navbar-nav me-2 mb-2 mb-lg-0">
                                 <li class="nav-item me-2">
-                                    <a href="#">
+                                    <a href="{{ route('LoginPage') }}">
                                         <button class="btn btn-outline-primary">
                                             Login
                                         </button>
