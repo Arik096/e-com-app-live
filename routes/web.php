@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Master\Home;
 use App\Http\Livewire\User\Login;
 use App\Http\Controllers\User\LoginCheck;
+use App\Http\Livewire\User\Register;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,9 @@ use App\Http\Controllers\User\LoginCheck;
 */
 
 Route::get('/', Home::class)->name('HomePage');
+
 Route::get('/login', Login::class)->name('LoginPage');
 Route::post('/login', [LoginCheck::class, 'login'])->name('Login');
 Route::get('/logout', [LoginCheck::class, 'logout'])->name('Logout');
+
+Route::get('/register', Register::class)->name('RegisterPage');
