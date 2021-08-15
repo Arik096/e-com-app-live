@@ -60,7 +60,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <button class="btn btn-outline-primary">Register</button>
+                                    <a href="{{ route('RegisterPage') }}">
+                                        <button class="btn btn-outline-primary">Register</button>
+                                    </a>
                                 </li>
                             </ul>
                         @endif
